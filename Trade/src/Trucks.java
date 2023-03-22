@@ -25,6 +25,9 @@ public class Trucks {
     public String getMototrista() {
         return mototrista;
     }
-    
+    public String toString(){
+        return "\n Motorista: "+this.getMototrista()+
+                "\nPlaca: " + this.getPlaca()+
+                "\nPeso Maximo Ataual: " + this.pesoMax;
     
 }

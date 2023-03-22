@@ -3,39 +3,34 @@ public class Truck {
     private int id;
     private String placa;
     private int peso_maximo;
-    // Isso poderia ser uma classe:
     private String motorista;
 
-        // Getter e Setter id
+        // CRIAR UM CONSTRUTOR
+        public Truck() {
+            this.id = 1;
+            this.placa = "abc-1234";
+            this.peso_maximo = 2500;
+            motorista = "Claudiney";
+        }
+
+        // Getter id
         public int getId(){
             return id;
         }
-        public void setId(int id){
-            this.id = id;
-        }
 
-        // Getter e Setter placa
+        // Getter placa
         public String getPlaca(){
             return placa;
         }
-        public void setPlaca(String placa){
-            this.placa = placa;
-        }
 
-        // Getter e Setter peso máximo
+        // Getter peso máximo
         public int getPeso_maximo(){
             return peso_maximo;
         }
-        public void setPeso_maximo(int peso_maximo){
-            this.peso_maximo = peso_maximo;
-        }
 
-        // Getter e Setter motorista
+        // Getter motorista
         public String getMotorista(){
             return motorista;
-        }
-        public void setMotorista(String motorista){
-            this.motorista = motorista;
         }
 
         // Função para retornar os valores da classe:

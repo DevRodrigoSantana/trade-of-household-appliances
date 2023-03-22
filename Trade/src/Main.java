@@ -2,48 +2,42 @@ import javax.swing.*;
 import java.util.ArrayList;
 
 public class Main {
+    static ArrayList<Product> productsList = new ArrayList<Product>();
 
-    static ArrayList<Customer> customersList = new ArrayList<Customer>();
-    static int customersListIterator = 0;
+    public static void createProduct(){
+        String nome = JOptionPane.showInputDialog(null, "Digite o nome do produto: ");
+        String valorString = JOptionPane.showInputDialog(null, "Digite o valor do produto: ");
+        double valorDouble = Double.parseDouble(valorString);
+        String pesoString = JOptionPane.showInputDialog(null, "Digite o peso do produto: ");
+        double pesoDouble = Double.parseDouble(pesoString);
 
-    public static void createCustomer(){
-        String nome = JOptionPane.showInputDialog(null, "Digite o nome do cliente: ");
-        String telefoneString = JOptionPane.showInputDialog(null, "Digite o telefone do cliente: ");
-        int telefoneInt = Integer.parseInt(telefoneString);
+        productsList.add(new Product(nome, valorDouble, pesoDouble));
 
-        customersList.add(new Customer());
-
-        customersList.get(customersListIterator).setCustomer_id(customersListIterator);
-        customersList.get(customersListIterator).setnome(nome);
-        customersList.get(customersListIterator).setTel(telefoneInt);
-
-        customersListIterator++;
         options();
     }
 
-    static String displayCustomers;
-    public static void listCustomers(){
-        displayCustomers = "";
+    static String displayProducts = "";
+    public static void listProducts(){
+        displayProducts = "";
 
-        for(Customer cust : customersList){
-            displayCustomers += cust.info();
+        for(Product p : productsList){
+            displayProducts += p.info() + "\n";
         }
 
-        JOptionPane.showMessageDialog(null, displayCustomers);
-
+        JOptionPane.showMessageDialog(null, displayProducts);
         options();
     }
 
-    public static void updateCustomer(){}
+    public static void updateProduct(){}
 
-    public static void deleteCustomer(){
-        String idString = JOptionPane.showInputDialog(null, "Digite o id do cliente para excluí-lo: ");
+    public static void deleteProduct(){
+        String idString = JOptionPane.showInputDialog(null, "Digite o id do produto a ser exluído: ");
         int idInt = Integer.parseInt(idString);
 
-        for(Customer cust : customersList){
-            if(cust.getCustomer_id() == idInt){
-                customersList.remove(cust);
-                JOptionPane.showMessageDialog(null, "Cliente removido com sucesso...");
+        for(Product p : productsList){
+            if(p.getId() == idInt){
+                productsList.remove(p);
+                JOptionPane.showMessageDialog(null, "Produto deletado com sucesso...");
                 break;
             }
         }
@@ -53,23 +47,23 @@ public class Main {
 
     public static void options(){
         try {
-            String customerOptionList = "O que deseja fazer? \n 0) Sair \n 1) Criar cliente \n 2) Listar clientes \n 3) Atualizar cliente \n 4) Deletar cliente";
+            String customerOptionList = "O que deseja fazer? \n 0) Sair \n 1) Criar produto \n 2) Listar produtos \n 3) Atualizar produto \n 4) Deletar produto";
 
             String opString = JOptionPane.showInputDialog(null, customerOptionList);
             int opInt = Integer.parseInt(opString);
 
             switch(opInt){
                 case 1:
-                    createCustomer();
+                    createProduct();
                     break;
                 case 2:
-                    listCustomers();
+                    listProducts();
                     break;
                 case 3:
-                    updateCustomer();
+                    updateProduct();
                     break;
                 case 4: 
-                    deleteCustomer();
+                    deleteProduct();
                     break;
                 case 0:
                     System.exit(0);

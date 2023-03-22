@@ -2,6 +2,7 @@ public class Customer {
     private int customer_id;
     private String nome;
     private int tel;
+    private int distancia;
 
         // Getter e setter customer_id
         public int getCustomer_id(){
@@ -26,12 +27,20 @@ public class Customer {
         public void setTel(int tel){
             this.tel = tel;
         }
+
+        // Getter e setter Distância
+        public int getDistancia(){
+            return distancia;
+        }
+        public void setDistancia(int distancia){
+            this.distancia = distancia;
+        }
         
         public String info(){
             return
                 "\nId: " + this.getCustomer_id() +
                 "\nNome: " + this.getNome() +
-                "\nTel: " + this.getTel() + "\n";
-
+                "\nTel: " + this.getTel() + 
+                "\nEndereço: " + this.getDistancia() + "\n";
         }
 }

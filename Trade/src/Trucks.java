@@ -31,3 +31,4 @@ public class Trucks {
                 "\nPeso Maximo Ataual: " + this.pesoMax;
     
 }
+}

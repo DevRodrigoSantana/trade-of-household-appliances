@@ -15,6 +15,10 @@ public class Trucks {
     public double getPesoMax() {
         return pesoMax;
     }
+    
+    public void setPesoMax(double pesoMax) {
+        this.pesoMax = pesoMax;
+    }
 
 
     public String getPlaca() {
@@ -28,7 +32,7 @@ public class Trucks {
     public String toString(){
         return "\n Motorista: "+this.getMototrista()+
                 "\nPlaca: " + this.getPlaca()+
-                "\nPeso Maximo Ataual: " + this.pesoMax;
+                "\nPeso Maximo Ataual: " + this.getPesoMax();
     
 }
 }

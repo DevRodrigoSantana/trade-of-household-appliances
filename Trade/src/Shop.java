@@ -1,14 +1,29 @@
 import java.util.*;
-import java.util.ArrayList;
 
 
 public class Shop {
     static Scanner entrada  = new Scanner (System.in);
     static ArrayList<Customer> listaClientes;
+    static ArrayList<Product> listaProdutos;
+    static Map<Product,Integer> carrinho;
+    static ArrayList<Trucks> Mototrita;
+    
 
 
     public static void main(String[] args) throws Exception {
        listaClientes = new ArrayList<Customer>();
+       carrinho = new HashMap<>();
+       listaProdutos = new ArrayList<>();
+       Product p1Product = new Product("Geladeira", 130, 5000, 30);
+       listaProdutos.add(p1Product);
+       Product p2Product = new Product("Guarda-roupa", 90, 2500, 30);
+       listaProdutos.add(p2Product);
+       Product p3Product = new Product("maquina de lavar roupa", 50, 5000, 30);
+       listaProdutos.add(p3Product);
+       Trucks Caminhao = new Trucks("1K1OP3","José");
+       Mototrita.add(Caminhao);
+       
+
        menu();
     }
 

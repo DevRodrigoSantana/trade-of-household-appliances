@@ -1,12 +1,12 @@
 public class Trucks {
     private  double pesoMax;
     private  String placa;
-    private String mototrista;
+    private String motorista;
 
 
-    public Trucks(String placa, String mototrista) {
+    public Trucks(String placa, String motorista) {
         this.placa = placa;
-        this.mototrista = mototrista;
+        this.motorista = motorista;
         this.pesoMax = 2500;
 
     }
@@ -27,7 +27,7 @@ public class Trucks {
 
 
     public String getMototrista() {
-        return mototrista;
+        return motorista;
     }
     public String toString(){
         return "\n Motorista: "+this.getMototrista()+

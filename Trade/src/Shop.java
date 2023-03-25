@@ -6,7 +6,7 @@ public class Shop {
     static ArrayList<Customer> listaClientes;
     static ArrayList<Product> listaProdutos;
     static Map<Product,Integer> carrinho;
-    static ArrayList<Trucks> Mototrita;
+    static ArrayList<Trucks> Motorista;
     
 
 
@@ -14,6 +14,7 @@ public class Shop {
        listaClientes = new ArrayList<Customer>();
        carrinho = new HashMap<>();
        listaProdutos = new ArrayList<>();
+       Motorista = new ArrayList<>();
        Product p1Product = new Product("Geladeira", 130, 5000, 30);
        listaProdutos.add(p1Product);
        Product p2Product = new Product("Guarda-roupa", 90, 2500, 30);
@@ -21,9 +22,7 @@ public class Shop {
        Product p3Product = new Product("maquina de lavar roupa", 50, 5000, 30);
        listaProdutos.add(p3Product);
        Trucks Caminhao = new Trucks("1K1OP3","José");
-       Mototrita.add(Caminhao);
-       
-
+       Motorista.add(Caminhao);
        menu();
     }
 
@@ -67,7 +66,23 @@ public class Shop {
                 }
           }           
     
-     public static void cadastrar(){
+    public static void cadastrar(){
+         System.out.println("\n-------------------------------------------------");
+         System.out.println("\nDigite seu nome: ");
+         String nomeCliente = entrada.nextLine();
+         entrada.nextLine();
+         System.out.println("Digite seu CPF: ");
+         String cpf = entrada.nextLine();
+         System.out.println("Agora digite seu Email para contato: ");
+         String emailCliente = entrada.nextLine();
+         System.out.println("Enedereço: ");
+         String enderço = entrada.nextLine();
+         System.out.println("Digite a distancia Aproximado em KM para loja: ");
+         int distancia = entrada.nextInt();
+         System.out.println("--------------------------------------------------");
+         Customer customer = new Customer(nomeCliente, cpf, emailCliente, enderço, distancia);
+         listaClientes.add(customer);
+         menu();
     } 
     public static void listarProdutos(){
 

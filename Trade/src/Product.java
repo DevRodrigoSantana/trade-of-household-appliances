@@ -69,7 +69,7 @@ private  double peso;
     public String info(){
         return "\nID: " + this.getId()+
                 "\nProduto: " + this.getNome_produto()+
-                "\nPreço: " + this.getValor_produto()+
+                "\nPreço: " + Utilizar.doubletoString(getValor_produto())+
                 "\nPeso do Produto: Kg " + this.getPeso() +
                 "\nQuantidade atual : " + this.getQtl();
     

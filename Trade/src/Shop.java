@@ -85,7 +85,12 @@ public class Shop {
          menu();
     } 
     public static void listarProdutos(){
-
+        if( listaProdutos.size()>0){
+            for(Product product : listaProdutos){
+                System.out.println(product.info());
+            }
+            menu();
+        }
     }  
     public static void  comprar(){
 
@@ -94,7 +99,6 @@ public class Shop {
 
     }
     public static void verClientes(){
-
     }
 
 }

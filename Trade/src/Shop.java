@@ -116,7 +116,6 @@ public class Shop {
                 }
             }
         }
-
         menu();
     }
 
@@ -135,7 +134,6 @@ public class Shop {
                 break;
             }
         }
-
         menu();
     }
 
@@ -155,7 +153,6 @@ public class Shop {
             for(Product product : listaProdutos){
                 System.out.println(product.info());
             }
-            
         }else {
             System.out.println("Nenhum Produto Cadastrado!!");
         }
@@ -166,7 +163,6 @@ public class Shop {
         for (Product i : carrinho.keySet()) {
             System.out.println("Produto do carrinho: " + i.info() + "\n---Código do carrinho---: " + carrinho.get(i) + "\n");
         }
-
         menu();
     }
         
@@ -174,8 +170,6 @@ public class Shop {
         for(Sale s : listaVendas){
             System.out.println(s.info());
         }
-
-
         menu();
     }
 }

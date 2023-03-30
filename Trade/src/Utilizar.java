@@ -7,6 +7,5 @@ public class Utilizar {
     public static String doubletoString(Double valor){
         return formatandoValor.format(valor);
     }
-    
 }
 

@@ -68,7 +68,7 @@ public class Customer {
 
     public String toString(){
         return "\n Nome: " + this.getNome() +
-               "\n RG : " + this.getCpf() + 
+               "\n CPF : " + this.getCpf() + 
                "\n Email : " + this.getEmail()+
                "\n Endereço: " + this.getNome() +
                "\n Distancia para loja : " + this.getDistancia();

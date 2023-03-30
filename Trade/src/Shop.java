@@ -89,8 +89,12 @@ public class Shop {
             for(Product product : listaProdutos){
                 System.out.println(product.info());
             }
-            menu();
+            
+        }else {
+            System.out.println("Nenhum Produto Cadastrado!!");
+
         }
+        menu();
     }  
     public static void  comprar(){
 
@@ -99,6 +103,16 @@ public class Shop {
 
     }
     public static void verClientes(){
+        if ( listaClientes.size()>0){
+            for(Customer cliente : listaClientes){
+                System.out.println(cliente);
+
+            }
+
+        }else{
+            System.out.println("Nenhum cliente Cadastrado!!");
+        }
+        menu();
     }
 
 }

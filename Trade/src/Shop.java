@@ -48,7 +48,7 @@ public class Shop {
                         listarProdutos();
                         break;
                     case 3:
-                        comprar();
+                        comprarProdutos();
                         break;
                     case 4:
                         carrinho();
@@ -57,7 +57,7 @@ public class Shop {
                         verClientes();
                         break;
                     case 6 :
-                        System.out.println("Obrigado pela visita, #VOLTESEMPRE !!");
+                        System.out.println("Obrigado pela visita!!\n#VOLTESEMPRE !!");
                         System.exit(0);
                     default :
                         System.out.println("OPS, ALGO DEU ERRADO!!!!!");
@@ -87,7 +87,7 @@ public class Shop {
     public static void listarProdutos(){
         if( listaProdutos.size()>0){
             for(Product product : listaProdutos){
-                System.out.println(product.info());
+                System.out.println(product);
             }
             
         }else {
@@ -96,10 +96,72 @@ public class Shop {
         }
         menu();
     }  
-    public static void  comprar(){
+    public static void  comprarProdutos(){
+        if (listaProdutos.size()>0){
+           
+
+            System.out.println("|               Produtos Disponiveis             |");
+
+            for (Product produto : listaProdutos){
+                System.out.println(produto + "\n");
+            }
+            System.out.println("Digite o IDENTIFICADOR do produto");
+            int id = Integer.parseInt(entrada.next());
+            boolean presente = false;
+
+            for (Product produto : listaProdutos){
+                if (produto.getId()==id){
+                   int qtd = 0;
+                   try {
+                    qtd= carrinho.get(produto);
+                    carrinho.put(produto, qtd+1);
+
+                    
+                   } catch (NullPointerException e) {
+                    carrinho.put(produto, 1);
+                    
+                   }
+                   System.out.println(" Adicionado com sucesso ");
+                   presente=true;
+
+                   if (presente){
+                    System.out.println("-------------------------------------------");
+                    System.out.println("Deseja adicionar outro pruto ao carrinho ?");
+                    System.out.println("\n|          1--sim      \n|          2--nao");
+                    int  opcao = Integer.parseInt(entrada.next());
+
+                    if(opcao==1){
+                        comprarProdutos();
+                    }else {
+                        System.out.println("Finalizando compra");
+                        finalizarCompra();
+                    }
+                
+                    }
+                }else{
+                    System.out.println("Produto não encontrado");
+                    menu();
+                }
+            }
+        }else{
+            System.out.println("Não tem Produtos cadastrados!");
+        }
 
     }
     public static void carrinho(){
+        System.out.println("------------Produtos no meu Carrinho---------------");
+        if (carrinho.size()>0){
+            for(Product produto :carrinho.keySet()){
+                System.out.println("Produto: "+ produto+ "\nQuantidade: "+ carrinho.get(produto));
+
+
+            }
+
+        }else{
+            System.out.println("Carrinho VAZIO!!");
+        }
+        menu();
+
 
     }
     public static void verClientes(){
@@ -114,5 +176,22 @@ public class Shop {
         }
         menu();
     }
+
+    static void finalizarCompra(){
+        Double valorTotal =0.0;
+        System.out.println("Seus Produtos");
+        for (Product produto : carrinho.keySet()){
+            int qtd = carrinho.get(produto);
+            valorTotal+= produto.getValor_produto()*qtd;
+            System.out.println(produto);
+            System.out.println("Quantidade " + qtd );
+            System.out.println("--------------------------------------------");
+
+        }
+        System.out.println("O valor de sua Compra é : "+ Utilizar.doubletoString(valorTotal));
+        carrinho.clear();
+
+    }
+    
 
 }

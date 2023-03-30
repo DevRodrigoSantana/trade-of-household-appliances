@@ -108,6 +108,7 @@ public class Shop {
                         venda.setProduct(p);
 
                         listaVendas.add(venda);
+                        carrinho.remove(p);
 
                         System.out.println("Produto " + p.getNome_produto() + " comprado por: " + c.getCpf() + " com sucesso!");
 
@@ -140,7 +141,7 @@ public class Shop {
     public static void verClientes(){
         if (listaClientes.size() > 0){
             for(Customer cliente : listaClientes){
-                System.out.println(cliente);
+                System.out.println(cliente.info());
             }
         } else{
             System.out.println("Nenhum cliente Cadastrado!!");
@@ -160,6 +161,8 @@ public class Shop {
     }  
 
     public static void listaCarrinhos(){
+        System.out.println("\n");
+
         for (Product i : carrinho.keySet()) {
             System.out.println("Produto do carrinho: " + i.info() + "\n---Código do carrinho---: " + carrinho.get(i) + "\n");
         }
@@ -168,7 +171,7 @@ public class Shop {
         
     public static void listarVendas() {
         for(Sale s : listaVendas){
-            System.out.println(s.info());
+            System.out.println(s.info() + "\n");
         }
         menu();
     }

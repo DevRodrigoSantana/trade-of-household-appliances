@@ -58,5 +58,4 @@ private  double peso;
                 "\nPeso do Produto: Kg " + Utilizar.doubletoString(getPeso()) +
                 "\nQuantidade atual : " + this.getQtl();
     }
-
 }

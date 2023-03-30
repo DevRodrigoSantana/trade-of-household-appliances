@@ -140,10 +140,13 @@ public class Shop {
     }
 
     public static void verClientes(){
-        for(Customer c : listaClientes){
-            System.out.println(c.info() + "\n");
+        if (listaClientes.size() > 0){
+            for(Customer cliente : listaClientes){
+                System.out.println(cliente);
+            }
+        } else{
+            System.out.println("Nenhum cliente Cadastrado!!");
         }
-
         menu();
     }
 
@@ -152,9 +155,11 @@ public class Shop {
             for(Product product : listaProdutos){
                 System.out.println(product.info());
             }
-
-            menu();
+            
+        }else {
+            System.out.println("Nenhum Produto Cadastrado!!");
         }
+        menu();
     }  
 
     public static void listaCarrinhos(){
@@ -169,6 +174,7 @@ public class Shop {
         for(Sale s : listaVendas){
             System.out.println(s.info());
         }
+
 
         menu();
     }

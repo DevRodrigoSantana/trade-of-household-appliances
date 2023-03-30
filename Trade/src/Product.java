@@ -55,8 +55,8 @@ private  double peso;
         return "\nID: " + this.getId()+
                 "\nNome produto: " + this.getNome_produto()+
                 "\nPreço: " + Utilizar.doubletoString(getValor_produto())+
-                "\nPeso do Produto: Kg " + this.getPeso() +
-                "\nQuantidade atual : " + this.getQtl() + "\n";
+                "\nPeso do Produto: Kg " + Utilizar.pesopesinho(getPeso()) +
+                "\nQuantidade atual : " + this.getQtl();
     }
 
 }

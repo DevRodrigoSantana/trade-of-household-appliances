@@ -17,7 +17,15 @@ public class Product {
 
         }
 
+<<<<<<< Updated upstream
         
+=======
+    public String info(){
+        return "\nID: " + this.getId()+
+                "\nNome produto: " + this.getNome_produto()+
+                "\nPreço: " + Utilizar.doubletoString(getValor_produto())+
+                "\nPeso do Produto: Kg " + Utilizar.doubletoString(getPeso());
+>>>>>>> Stashed changes
     
         public int getId() {
             return id;

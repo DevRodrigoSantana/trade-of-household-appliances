@@ -190,7 +190,6 @@ public class Shop {
             JOptionPane.showMessageDialog(null, "Nenhum Carrinho Cadastrado!!");
         }
 
-
         menu();
     }
 

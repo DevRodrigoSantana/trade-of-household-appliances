@@ -26,10 +26,19 @@ public class Carrinho {
         this.idCliente = idCliente;
     }
 
+    public String printProducts(){
+        String printThisCar = "";
+        for(Product p : productsList){
+            printThisCar += p.getNome_produto() + " ";
+        }
+
+        return printThisCar;
+    }
+
     public String info(){
         return
             "\nCarrinho Id: " + id +
-            "\nLista de produtos: " + productsList +
+            "\nLista de produtos: " + this.printProducts() +
             "\nCliente Id: " + idCliente + "\n";
     }
 }
